@@ -1,0 +1,43 @@
+  <div id="" class="container d-flex flex-row">
+      <div id="counter" class="col-md-6 p-2" align="left">
+        <h6> <span class="badge badge-pill badge-info">Total: <%= @number_of_assessments %></span> </h6>
+      </div>
+      <div id="assessment-header" class="col-md-6 p-2" align="right">
+        <a id="add-assessment-button" href="/assessments/new"> <i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i> </a>
+      </div>
+  </div>
+
+  <div class="container">
+    <% if @assessments.any? %>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>#id</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Due Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @assessments.each do |assessment| %>
+          <tr>
+            <th scope="row"> <%= assessment.id %> </th>
+            <td class="assessment-list"><%= link_to assessment.name, assessment_path(assessment) %></td>
+            <td class="assessment-list"><%= assessment.description %></td>
+            <td class="assessment-list"><%= assessment.status %></td>
+            <% if assessment.due_date %>
+              <td class="assessment-list"><%= assessment.due_date.strftime("%d-%m-%Y") %></td>
+            <% else %>
+              <td class="assessment-list"></td>
+            <% end %>
+            <td class="assessment-list"><%= link_to "Edit", edit_assessment_path(assessment) %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% else %>
+      <h1>No assessments yet</h1>
+    <% end %>
+  </div>

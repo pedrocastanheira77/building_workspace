@@ -1,0 +1,56 @@
+html {
+  height: 100%; }
+  @media screen and (max-width: 575px) {
+    html {
+      font-size: 13px; }
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.navbar {
+  background-color: #FF7300;
+}
+
+.navbar-brand {
+  margin: 0em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  font-size: 2em;
+  color: white;
+  font-family: 'Permanent Marker', cursive;
+}
+
+.img-responsive {
+  max-height: 160px;
+  width: auto;
+}
+
+/*#photo_area {
+  max-width: 242px;
+  height: auto;
+}*/
+
+.thumb {
+  padding: 2em;
+}
+
+#assessment-info {
+  margin-top: 0.3em;
+  font-size: 1em;
+  padding-top: 1em;
+  padding-bottom: 2em;
+  color: white;
+  background-color: black
+}
+
+.btn {
+  background-color: #FF7300;
+  border: none;
+}
+
+.btn:hover {
+  background-color: #7c3d0a;
+  border-color: none;
+}
